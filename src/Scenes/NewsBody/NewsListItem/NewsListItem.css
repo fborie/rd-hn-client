@@ -1,0 +1,44 @@
+.NewsListItem{
+    border: 1px #ccc solid;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.NewsListItem:hover{
+    background-color: #fafafa;
+    cursor:pointer; 
+    cursor: hand;
+}
+
+.NewsListItem:hover span.trash{
+    display: list-item;
+}
+
+.NewsListItem span.trash {
+    display: none;
+}
+
+div.description{
+    text-align: left;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+span.time{
+    height: 100%;
+    display: flex;
+    align-items: center; 
+}
+
+div.description > span.title, span.time{
+    color: #333;
+    font-size: 13px; 
+}
+
+div.description > span.author{
+    color: #999;
+    font-size: 13px;
+    margin-left: 10px
+}
+

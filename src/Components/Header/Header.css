@@ -1,0 +1,10 @@
+.header {
+    background-color: #222;
+    padding: 50px;
+    color: #ffffff;
+    text-align: left
+  }
+ 
+.header > p.description{
+    font-size: 20px;
+}
