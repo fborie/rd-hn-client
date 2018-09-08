@@ -1,4 +1,4 @@
-#Instructions
+##Instructions
 Clone both the client and the server(rd-hn-server) repositories and execute them (`yarn start`for both). Follow the steps below.
 
 ## Client/Server
