@@ -4,13 +4,14 @@ import './App.css';
 import Header from './Components/Header';
 import NewsBody from './Scenes/NewsBody';
 import { getNews, removeNew } from './Helpers/ApiHelper';
+
 class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
       title: "HN Feed",
-      description: "We <3 hacker news!",
+      description: "We ♥ hacker news!",
       news: [],
     }
 

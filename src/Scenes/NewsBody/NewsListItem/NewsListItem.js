@@ -7,6 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 
 import './NewsListItem.css';
 
+const openUrl = (url) => {
+    window.open(url, "_blank");
+}
+
 const NewsListItem = (props) => {
     
     let { title, author, created_at } = props;
@@ -21,7 +25,7 @@ const NewsListItem = (props) => {
         sameElse: 'MMM DD'
     });
     return(
-        <div className="NewsListItem">
+        <div className="NewsListItem" onClick={() => openUrl(props.url)}>
              <Grid container spacing={8}>
                 <Grid item xs={9}>
                     <div className="description">

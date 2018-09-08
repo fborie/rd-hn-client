@@ -4,7 +4,6 @@ import Body from '../../Components/Body';
 import ListView from '../../Components/ListView';
 
 const NewsBody = (props) => {
-    console.log(props);
     return (
         <div className="NewsBody">
             <Body>
