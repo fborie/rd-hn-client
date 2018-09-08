@@ -13,11 +13,28 @@ class App extends Component {
       description: "We <3 hacker news!",
       news: [],
     }
+
+    this.deleteNew = this.deleteNew.bind(this);
   }
 
   componentDidMount(){
     getNews().then(res => {
       this.setState({news: res.data});
+    })
+  }
+
+  deleteNew( storyId ){
+    removeNew(storyId).then( res => {
+      console.log(res);
+      console.log(storyId);
+      if (res.data.story_id == storyId ){
+        let storyIndex = this.state.news.map(function(story) { return story.story_id; }).indexOf(storyId);
+        if(storyIndex > -1){
+          let news = [...this.state.news];
+          news.splice(storyIndex,1);
+          this.setState({news: news});
+        }
+      }
     })
   }
 
@@ -27,7 +44,7 @@ class App extends Component {
         <Header 
           title={this.state.title} 
           description={this.state.description} />
-        <NewsBody news={this.state.news} />
+        <NewsBody news={this.state.news} onDeleteStory={this.deleteNew} />
       </div>
     );
   }

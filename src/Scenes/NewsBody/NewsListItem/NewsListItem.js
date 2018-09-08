@@ -9,7 +9,6 @@ import './NewsListItem.css';
 
 const NewsListItem = (props) => {
     
-    
     let { title, author, created_at } = props;
     if( !title ){
         title = 'title';
@@ -37,7 +36,7 @@ const NewsListItem = (props) => {
                             </Grid> 
                             <Grid item xs={6}>
                             <Tooltip title="Delete" placement="right">
-                                <IconButton aria-label="Delete">
+                                <IconButton onClick={() => props.onDeleteItem(props.story_id)} aria-label="Delete">
                                     <span className="trash"><DeleteOutlined /></span> 
                                 </IconButton>
                             </Tooltip>
