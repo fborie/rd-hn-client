@@ -3,14 +3,22 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header';
 import NewsBody from './Scenes/NewsBody';
+import { getNews } from './Helpers/ApiHelper';
 class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
       title: "HN Feed",
-      description: "We <3 hacker news!"
+      description: "We <3 hacker news!",
+      news: [],
     }
+  }
+
+  componentDidMount(){
+    getNews().then(res => {
+      this.setState({news: res.data});
+    })
   }
 
   render() {
@@ -19,7 +27,7 @@ class App extends Component {
         <Header 
           title={this.state.title} 
           description={this.state.description} />
-        <NewsBody />
+        <NewsBody news={this.state.news} />
       </div>
     );
   }
