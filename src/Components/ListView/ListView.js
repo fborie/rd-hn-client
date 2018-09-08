@@ -2,7 +2,6 @@ import React from 'react';
 import List from '@material-ui/core/List';
 
 function renderListItems(items, ItemType){
-    console.log(items);
     if( items.length == 0 ){
         return(
             <div>

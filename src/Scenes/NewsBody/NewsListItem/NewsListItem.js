@@ -2,6 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import Grid from '@material-ui/core/Grid';
 import DeleteOutlined from '@material-ui/icons/DeleteOutlined';
+import Tooltip from '@material-ui/core/Tooltip';
+import IconButton from '@material-ui/core/IconButton';
 
 import './NewsListItem.css';
 
@@ -24,7 +26,7 @@ const NewsListItem = (props) => {
              <Grid container spacing={8}>
                 <Grid item xs={9}>
                     <div className="description">
-                        <span className="title">{title}</span> - <span className="author">{author}</span>
+                        <span className="title">{title}</span><span className="author">{`- ${author} -`}</span>
                     </div>
                 </Grid>
                 <Grid item xs={3}>
@@ -34,7 +36,11 @@ const NewsListItem = (props) => {
                                 <span className="time">{dateToPublish}</span>
                             </Grid> 
                             <Grid item xs={6}>
-                                <span className="trash"><DeleteOutlined /></span> 
+                            <Tooltip title="Delete" placement="right">
+                                <IconButton aria-label="Delete">
+                                    <span className="trash"><DeleteOutlined /></span> 
+                                </IconButton>
+                            </Tooltip>
                             </Grid>
                     </Grid>
                 </Grid>

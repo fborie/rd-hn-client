@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header';
 import NewsBody from './Scenes/NewsBody';
-import { getNews } from './Helpers/ApiHelper';
+import { getNews, removeNew } from './Helpers/ApiHelper';
 class App extends Component {
 
   constructor(props){
