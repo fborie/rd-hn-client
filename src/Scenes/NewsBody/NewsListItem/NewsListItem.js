@@ -13,13 +13,12 @@ const NewsListItem = (props) => {
         title = 'title';
     }
 
-    let dateToPublish = moment(moment.unix(created_at)).calendar(null,{
+    let dateToPublish = moment(created_at).calendar(null,{
         sameDay: 'HH:mm A',
         lastDay: '[Yesterday]',
         lastWeek: 'MMM DD',
         sameElse: 'MMM DD'
     });
-
     return(
         <div className="NewsListItem">
              <Grid container spacing={8}>

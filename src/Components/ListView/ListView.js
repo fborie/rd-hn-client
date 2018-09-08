@@ -6,7 +6,7 @@ function renderListItems(items, ItemType){
     if( items.length == 0 ){
         return(
             <div>
-                <p>Cargando ... </p>
+                <p>Loading ... </p>
             </div>
         )
     }
